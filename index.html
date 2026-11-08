@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VEXCHAT | Connect With Friends</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="logo">VEX<span>CHAT</span></div>
+
+      <div class="sidebar-section">
+        <p class="section-title">MENU</p>
+        <button class="nav-item active" data-page="home">🏠 Home</button>
+        <button class="nav-item" data-page="friends">👥 Friends</button>
+        <button class="nav-item" data-page="messages">💬 Messages</button>
+        <button class="nav-item" data-page="groups">👨‍👩‍👧 Groups</button>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="section-title">DIRECT MESSAGES</p>
+        <div id="conversationList">
+          <p class="empty">No conversations yet</p>
+        </div>
+      </div>
+
+      <div class="user-profile">
+        <div class="avatar">V</div>
+        <div>
+          <strong id="usernameDisplay">Guest</strong>
+          <small>VEXCHAT member</small>
+        </div>
+        <button id="settingsBtn">⚙️</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div>
+          <h2 id="pageTitle">Welcome to VEXCHAT</h2>
+          <p>Connect with your people.</p>
+        </div>
+        <div class="top-actions">
+          <input type="search" id="searchInput" placeholder="Search...">
+          <button id="notificationBtn">🔔</button>
+        </div>
+      </header>
+
+      <section id="homePage" class="page active">
+        <div class="welcome-card">
+          <h1>Welcome to <span>VEXCHAT</span></h1>
+          <p>Your friends. Your conversations. Your community.</p>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <span>👥</span>
+            <h2 id="friendCount">0</h2>
+            <p>Friends</p>
+          </div>
+          <div class="stat-card">
+            <span>💬</span>
+            <h2 id="messageCount">0</h2>
+            <p>Messages</p>
+          </div>
+          <div class="stat-card">
+            <span>🟢</span>
+            <h2 id="onlineCount">0</h2>
+            <p>Online</p>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3>Recent activity</h3>
+          <p id="recentActivity">Your recent conversations will appear here.</p>
+        </div>
+      </section>
+
+      <section id="friendsPage" class="page">
+        <div class="content-card">
+          <h2>Your Friends</h2>
+          <div class="add-friend">
+            <input id="friendUsername" placeholder="Enter friend's username">
+            <button id="addFriendBtn">Add Friend</button>
+          </div>
+          <div id="friendsList">
+            <p>No friends added yet.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="messagesPage" class="page">
+        <div class="chat-layout">
+          <div class="chat-placeholder">
+            <div class="chat-icon">💬</div>
+            <h2>Your Messages</h2>
+            <p>Select a conversation to start chatting.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="groupsPage" class="page">
+        <div class="content-card">
+          <h2>Group Chats</h2>
+          <p>Your group conversations will appear here.</p>
+          <button id="createGroupBtn">+ Create Group</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
