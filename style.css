@@ -1,0 +1,375 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #080d18;
+  --panel: #101a2c;
+  --panel-light: #17243a;
+  --blue: #1685ff;
+  --blue-light: #42a5ff;
+  --text: #f3f6ff;
+  --muted: #8493aa;
+  --border: #22334e;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 260px;
+  background: #0d1525;
+  border-right: 1px solid var(--border);
+  padding: 25px 17px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin: 5px 10px 45px;
+}
+
+.logo span {
+  color: var(--blue-light);
+}
+
+.sidebar-section {
+  margin-bottom: 35px;
+}
+
+.section-title {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 10px 14px;
+}
+
+.nav-item {
+  width: 100%;
+  background: transparent;
+  color: #aab7ca;
+  text-align: left;
+  padding: 14px;
+  border-radius: 9px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  transition: .2s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: #142c4c;
+  color: var(--blue-light);
+}
+
+.empty {
+  color: var(--muted);
+  font-size: 13px;
+  padding: 10px;
+}
+
+.user-profile {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--panel);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  font-weight: bold;
+}
+
+.user-profile strong {
+  display: block;
+  font-size: 13px;
+}
+
+.user-profile small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.user-profile button {
+  margin-left: auto;
+  background: transparent;
+  color: white;
+  font-size: 17px;
+}
+
+/* MAIN AREA */
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 30px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.topbar h2 {
+  font-size: 23px;
+  margin-bottom: 7px;
+}
+
+.topbar p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.top-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.top-actions input,
+.add-friend input {
+  background: var(--panel);
+  color: white;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 12px 15px;
+  outline: none;
+}
+
+.top-actions input:focus,
+.add-friend input:focus {
+  border-color: var(--blue);
+}
+
+.top-actions button {
+  background: var(--panel);
+  color: white;
+  border-radius: 9px;
+  padding: 12px;
+}
+
+/* PAGES */
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* WELCOME */
+
+.welcome-card {
+  background: linear-gradient(120deg, #102b50, #101a2c);
+  border: 1px solid #244b78;
+  padding: 45px;
+  border-radius: 17px;
+  margin-bottom: 25px;
+}
+
+.welcome-card h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.welcome-card h1 span {
+  color: var(--blue-light);
+}
+
+.welcome-card p {
+  color: #aabbd1;
+}
+
+/* DASHBOARD */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.stat-card,
+.content-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.stat-card > span {
+  font-size: 25px;
+}
+
+.stat-card h2 {
+  font-size: 28px;
+  margin: 14px 0 5px;
+}
+
+.stat-card p,
+.content-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.content-card h3,
+.content-card h2 {
+  margin-bottom: 18px;
+}
+
+/* FRIENDS */
+
+.add-friend {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.add-friend input {
+  flex: 1;
+  min-width: 0;
+}
+
+.add-friend button,
+.content-card > button {
+  background: var(--blue);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 9px;
+  font-weight: bold;
+}
+
+.add-friend button:hover,
+.content-card > button:hover {
+  background: var(--blue-light);
+}
+
+/* CHAT */
+
+.chat-layout {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  min-height: 500px;
+  display: grid;
+  place-items: center;
+}
+
+.chat-placeholder {
+  text-align: center;
+  padding: 25px;
+}
+
+.chat-icon {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+
+.chat-placeholder h2 {
+  margin-bottom: 10px;
+}
+
+.chat-placeholder p {
+  color: var(--muted);
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+  .sidebar {
+    width: 75px;
+    padding: 15px 8px;
+  }
+
+  .logo {
+    font-size: 12px;
+    margin: 10px 0 35px;
+    text-align: center;
+  }
+
+  .section-title,
+  .user-profile strong,
+  .user-profile small,
+  .empty {
+    display: none;
+  }
+
+  .nav-item {
+    font-size: 0;
+    text-align: center;
+    padding: 14px 5px;
+  }
+
+  .user-profile {
+    justify-content: center;
+    padding: 8px 3px;
+  }
+
+  .user-profile button {
+    display: none;
+  }
+
+  .main-content {
+    padding: 17px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-card {
+    padding: 25px;
+  }
+
+  .welcome-card h1 {
+    font-size: 24px;
+  }
+
+  .add-friend {
+    flex-direction: column;
+  }
+}
